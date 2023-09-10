@@ -16,6 +16,7 @@ else{
         $result = $conn->query('SELECT sensor1,sensor2,sensor3,sensor4,sensor5,sensor6,sensor7,sensor8 FROM Sensors WHERE ID=1');
     }
     if($result){
+	//enter the data of all sensor into the server 
         $row = $result->fetchArray(SQLITE3_ASSOC);
         $Se1 = round($row['sensor1'],1);
         echo "<div style=' z-index: 1; left: 295px; top: 115px; position: absolute; width: 300px; font-size:xx-large;'>". $Se1 ."<span>&#176</span></div>";
@@ -36,6 +37,8 @@ else{
         echo "<div style=' z-index: 1; left: 295px; top: 495px; position: absolute; width: 300px; font-size:xx-large;'>". $Se6 ."<span>&#176</span></div>";
                
         $Se7 = round($row['sensor7'],1);
+
+	//if sensor8(water sensor) is more than 0.5 volatage show water leakage warning
         $Se8 = $row["sensor8"]; 
         if($Se8>0.5){
             echo "<img src='image\water-puddle.png' width='450' style='position: absolute; top: 650px;'/>";
@@ -46,7 +49,7 @@ else{
             </div>";
         }
 
-
+	//all this div is to show the gradient bar of temperature
         echo "<div style='position: absolute; left: 75px; top: 100px; width: 200px; height: 30px; border-top-style: solid; border-width: 9px;
                
                 border-right-style: solid; border-left-style: solid; border-top-left-radius: 30px 30px; border-top-right-radius: 30px 30px; background-color:". temperaturecolor($Se1) ."'></div>";
@@ -74,6 +77,7 @@ else{
 
         $url = "http://100dayscss.com/codepen/thermostat-gradient.jpg";
 
+	//this echo is for the temperature of the environment
         echo "<div class='main' style=' box-sizing: border-box; position: absolute; left: 520px; top: 60px; '>
                 <div class='container' style='width: 400px; height: 400px; overflow: hidden;'>
 
@@ -113,6 +117,8 @@ else{
     echo "<div style='position:absolute; margin: 0 auto; left:100px; top:-20px; font-size:x-large;'>". date('d/m/Y H:i:s a', time()) ."</div>";
     $conn->close();
 }
+
+//function that return the exact degree of the line in the environment thermometer
 function getDegree($temperature){
     if($temperature<25){
         $temperature =  25 - $temperature;
@@ -124,6 +130,7 @@ function getDegree($temperature){
     }
 }
 
+//return for each temperature the matching color for the temperature bar in the boiler
 function temperaturecolor($temperature){
     $purple = "#A12EDF";
     $blue = "#371FE3";
