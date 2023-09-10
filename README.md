@@ -52,5 +52,15 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    sudo pip install spidev </br>
    ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/a1d17f3e-fe7c-4c13-b110-30d42ebb0b64)
 
-   
+## Install Apache server
+1) Before we install Apache to our Raspberry Pi, we must first ensure the package list is up to date by running the following two commands.</br>
+sudo apt-get update </br>
+sudo apt-get upgrade </br>
+![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/ca03e343-1d36-4a02-8ffe-d9661ee356b1)</br>
+2) To install apache2 on your Raspberry Pi, enter the following command into the terminal. </br>
+sudo apt install apache2 -y </br>
+![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/27126c8a-6483-4616-ac75-88786c6c8ccb)
+3)
+
+
    
