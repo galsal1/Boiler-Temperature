@@ -29,7 +29,7 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    Open the Raspberry Pi terminal and run the following command</br>
    cd</br>
    sudo apt-get install wiringpi</br></br>
-   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/2109205f-d9b5-44a6-b4dd-d343e2b0b7b2) </br>
+   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/2109205f-d9b5-44a6-b4dd-d343e2b0b7b2) </br></br>
    #For Raspberry Pi systems after May 2019 (earlier than that can be executed without), an upgrade may be required:</br>
    wget https://project-downloads.drogon.net/wiringpi-latest.deb </br>
    sudo dpkg -i wiringpi-latest.deb </br>
