@@ -25,6 +25,7 @@
             <img src="image\boiler-icon.png" width="400" style="position: relative;"/>
 
             <div class="refresh" id="output"></div>
+            <!--get data from database using php script and jquery-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script>
                 $(document).ready(function(){
@@ -40,7 +41,7 @@
                 getData();
                 setInterval(function () {
                     getData(); 
-                }, 1000);  // it will refresh your data every 10 sec
+                }, 1000);  // it will refresh your data every 1 sec
                 });
             </script>
         </div>
