@@ -40,6 +40,6 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    cd WiringPi</br>
    . /build</br>
    gpio -v</br></br>
-   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/49dbd676-3ae3-40b5-b4f6-da3458c0e12b)</br>
+   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/49dbd676-3ae3-40b5-b4f6-da3458c0e12b)</br></br>
    #Run gpio -v and version 2.70 will appear, if it doesn't it means there was an installation error
    
