@@ -21,7 +21,7 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.71.tar.gz </br>
    tar zxvf bcm2835-1.71.tar.gz </br>
    cd bcm2835-1.71/ </br>
-   sudo ./configure && sudo make && sudo make check && sudo make install
+   sudo ./configure && sudo make && sudo make check && sudo make install </br>
    ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/21ddec5f-ece2-4549-83ba-f4689a613c5b)
 
 
