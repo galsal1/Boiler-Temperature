@@ -21,14 +21,15 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.71.tar.gz </br>
    tar zxvf bcm2835-1.71.tar.gz </br>
    cd bcm2835-1.71/ </br>
-   sudo ./configure && sudo make && sudo make check && sudo make install </br>
+   sudo ./configure && sudo make && sudo make check && sudo make install </br></br>
    ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/21ddec5f-ece2-4549-83ba-f4689a613c5b)
 
 
 3) Install WiringPi libraries: </br>
    Open the Raspberry Pi terminal and run the following command</br>
    cd</br>
-   sudo apt-get install wiringpi</br>
+   sudo apt-get install wiringpi</br></br>
+   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/2109205f-d9b5-44a6-b4dd-d343e2b0b7b2)
    #For Raspberry Pi systems after May 2019 (earlier than that can be executed without), an upgrade may be required:</br>
    wget https://project-downloads.drogon.net/wiringpi-latest.deb </br>
    sudo dpkg -i wiringpi-latest.deb </br>
