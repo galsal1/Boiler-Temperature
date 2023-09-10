@@ -22,8 +22,10 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    tar zxvf bcm2835-1.71.tar.gz </br>
    cd bcm2835-1.71/ </br>
    sudo ./configure && sudo make && sudo make check && sudo make install
+   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/21ddec5f-ece2-4549-83ba-f4689a613c5b)
 
-2) Install WiringPi libraries: </br>
+
+3) Install WiringPi libraries: </br>
    Open the Raspberry Pi terminal and run the following command</br>
    cd</br>
    sudo apt-get install wiringpi</br>
