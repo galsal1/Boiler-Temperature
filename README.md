@@ -29,7 +29,7 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    Open the Raspberry Pi terminal and run the following command</br>
    cd</br>
    sudo apt-get install wiringpi</br></br>
-   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/2109205f-d9b5-44a6-b4dd-d343e2b0b7b2)
+   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/2109205f-d9b5-44a6-b4dd-d343e2b0b7b2) </br>
    #For Raspberry Pi systems after May 2019 (earlier than that can be executed without), an upgrade may be required:</br>
    wget https://project-downloads.drogon.net/wiringpi-latest.deb </br>
    sudo dpkg -i wiringpi-latest.deb </br>
@@ -39,6 +39,7 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    git clone https://github.com/WiringPi/WiringPi</br>
    cd WiringPi</br>
    . /build</br>
-   gpio -v</br>
+   gpio -v</br></br>
+   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/49dbd676-3ae3-40b5-b4f6-da3458c0e12b)</br>
    #Run gpio -v and version 2.70 will appear, if it doesn't it means there was an installation error
    
