@@ -16,7 +16,7 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
 ![Raspberry_Pi_Guides_for_4 37_e-Paper02](https://github.com/galsal1/Boiler-Temperature/assets/127937643/bcc2126c-b6db-4576-9a76-84b92ddce7e9)
  
 ### Install Libraries
-1) Install BCM2835 libraries: </br>
+1) **Install BCM2835 libraries:** </br>
    Open the Raspberry Pi terminal and run the following command </br>
    wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.71.tar.gz </br>
    tar zxvf bcm2835-1.71.tar.gz </br>
@@ -25,7 +25,7 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/21ddec5f-ece2-4549-83ba-f4689a613c5b)
 
 
-3) Install WiringPi libraries: </br>
+2) **Install WiringPi libraries:** </br>
    Open the Raspberry Pi terminal and run the following command</br>
    cd</br>
    sudo apt-get install wiringpi</br></br>
@@ -42,4 +42,15 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
    gpio -v</br></br>
    ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/49dbd676-3ae3-40b5-b4f6-da3458c0e12b)</br></br>
    #Run gpio -v and version 2.70 will appear, if it doesn't it means there was an installation error
+
+3) **python:**</br>
+   Open the Raspberry Pi terminal and run the following command</br>
+   sudo apt-get update </br>
+   sudo apt-get install ttf-wqy-zenhei </br>
+   sudo apt-get install python-pip </br>
+   sudo pip install RPi.GPIO </br>
+   sudo pip install spidev </br>
+   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/a1d17f3e-fe7c-4c13-b110-30d42ebb0b64)
+
+   
    
