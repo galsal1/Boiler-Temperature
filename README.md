@@ -17,53 +17,65 @@ To make sure SPI is not occupied, it is recommended to close other drivers' cove
  
 ### Install Libraries
 1) **Install BCM2835 libraries:** </br>
-   Open the Raspberry Pi terminal and run the following command </br>
-   wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.71.tar.gz </br>
-   tar zxvf bcm2835-1.71.tar.gz </br>
-   cd bcm2835-1.71/ </br>
-   sudo ./configure && sudo make && sudo make check && sudo make install </br></br>
-   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/21ddec5f-ece2-4549-83ba-f4689a613c5b)
-
-
-2) **Install WiringPi libraries:** </br>
+   Open the Raspberry Pi terminal and run the following command
+   ```
+   wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.71.tar.gz
+   tar zxvf bcm2835-1.71.tar.gz
+   cd bcm2835-1.71/
+   sudo ./configure && sudo make && sudo make check && sudo make install
+   ```
+   </br>
+   
+3) **Install WiringPi libraries:** </br>
    Open the Raspberry Pi terminal and run the following command</br>
-   cd</br>
-   sudo apt-get install wiringpi</br>
-   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/2109205f-d9b5-44a6-b4dd-d343e2b0b7b2) </br>
+   ```
+   cd
+   sudo apt-get install wiringpi
+   ```
    #For Raspberry Pi systems after May 2019 (earlier than that can be executed without), an upgrade may be required:</br>
-   wget https://project-downloads.drogon.net/wiringpi-latest.deb </br>
-   sudo dpkg -i wiringpi-latest.deb </br>
-   gpio -v </br>
+   ```
+   wget https://project-downloads.drogon.net/wiringpi-latest.deb
+   sudo dpkg -i wiringpi-latest.deb
+   gpio -v
+   ```
    #Run gpio -v and version 2.52 will appear, if it doesn't it means there was an installation error</br>
-   #Bullseye branch system using the following command:</br>
-   git clone https://github.com/WiringPi/WiringPi</br>
-   cd WiringPi</br>
-   . /build</br>
-   gpio -v</br>
-   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/49dbd676-3ae3-40b5-b4f6-da3458c0e12b)</br>
-   #Run gpio -v and version 2.70 will appear, if it doesn't it means there was an installation error
+   #Bullseye branch system using the following command:
+   ```
+   git clone https://github.com/WiringPi/WiringPi
+   cd WiringPi
+   . /build
+   gpio -v
+   ```
+   #Run gpio -v and version 2.70 will appear, if it doesn't it means there was an installation error </br>
 
 3) **python:**</br>
    Open the Raspberry Pi terminal and run the following command</br>
-   sudo apt-get update </br>
-   sudo apt-get install ttf-wqy-zenhei </br>
-   sudo apt-get install python-pip </br>
-   sudo pip install RPi.GPIO </br>
-   sudo pip install spidev </br>
-   ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/a1d17f3e-fe7c-4c13-b110-30d42ebb0b64)
+   ```
+   sudo apt-get update
+   sudo apt-get install ttf-wqy-zenhei
+   sudo apt-get install python-pip
+   sudo pip install RPi.GPIO
+   sudo pip install spidev
+   ```
 
 ### Install Apache server
 1) Before we install Apache to our Raspberry Pi, we must first ensure the package list is up to date by running the following two commands.</br>
-sudo apt-get update </br>
-sudo apt-get upgrade </br>
-![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/ca03e343-1d36-4a02-8ffe-d9661ee356b1)</br>
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
 2) To install apache2 on your Raspberry Pi, enter the following command into the terminal. </br>
-sudo apt install apache2 -y </br>
-![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/27126c8a-6483-4616-ac75-88786c6c8ccb)
+```
+sudo apt install apache2 -y
+```
 3) To be able to make changes to the files within the /var/www/html without using root we need to setup some permissions.</br>
 Firstly, we add the user pi (our user) to the www-data group, the default group for Apache2.</br>
 Secondly, we give ownership to all the files and folders in the /var/www/html directory to the www-data group.</br>
-![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/8cedcb32-04be-48de-8bfa-efc18ff1a720)
+Open the Raspberry Pi terminal and run the following command</br>
+```
+sudo usermod -a -G www-data pi
+sudo chown -R -f www-data:www-data /var/www/html
+```
 
 ### Install PHP7
 Open the Raspberry Pi terminal and run the following command</br>
