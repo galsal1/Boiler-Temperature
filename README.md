@@ -81,6 +81,7 @@ sudo chown -R -f www-data:www-data /var/www/html
 Open the Raspberry Pi terminal and run the following command</br>
 ```
 sudo apt install php7.4 libapache2-mod-php7.4 php7.4-mbstring php7.4-mysql php7.4-curl php7.4-gd php7.4-zip -y
+sudo apt-get install php7.4-sqlite
 ```
 
 ## Now we ready for setup the server
