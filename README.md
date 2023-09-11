@@ -101,6 +101,7 @@ sudo python /var/www/html/Main.py
 ```
 and after that reboot Raspberry-pi
 
+</br></br>
 # WiFi connect with dongle to Raspberry-pi without WiFi
 ## Connect the Hardware and check for USB WiFi Dongle Hardware
 type the following command in the terminal and hit enter  </br>
@@ -117,7 +118,84 @@ We need to edit the network interfaces file that is located at /etc/network/inte
 ```
 sudo nano /etc/network/interfaces
 ```
-Depending on the version of the Raspbian Operating system you have installed, the network interfaces file will already have few lines of text. Regardless of the content, make sure the following lines of code are present. If not, add these lines to the existing code. </br>
+Depending on the version of the Raspbian Operating system you have installed, the network interfaces file will already have few lines of text. Regardless of the content, make sure the following lines of code are present. If not, add these lines to the existing code.
+```
+auto lo
+
+iface lo inet loopback
+
+iface eth0 inet manual
+
+auto wlan0
+
+allow-hotplug wlan0
+
+iface wlan0 inet manual
+
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
+```
+Your updated code should look something like this.</br>
+![screen1](https://github.com/galsal1/Boiler-Temperature/assets/127937643/fa6fc81c-5aa0-4776-94a2-90b82d5117d8)</br>
+Press CTRL+X to exit the editor. It will ask you whether to save changes to the file or not. Type y and hit enter. You will go back to the terminal. We are done with editing the Network Interfaces File.
+
+## Edit the WPA Supplicant File
+The WPA or WiFi Protected Access Supplicant file consists of the details regarding the WiFi network like the name, password, security, type etc.</br></br>
+
+We need to edit this file and add the details of your personal WiFi network. In order to open the WPA Supplicant File, type the following command and hit enter.
+```
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
+Add the following lines of code to the existing code (if any). Make necessary changes to the following code as per your WiFi network details.
+```
+network={
+
+ssid=”Name of WiFi Network”
+
+psk=”Password of the WiFi Network”
+
+proto=RSN
+
+key_mgmt=WPA-PSK
+
+pairwise=CCMP TKIP
+
+group=CCMP TKIP
+
+id_str=”Name of WiFi Network”
+
+}
+```
+The edited file will look something like this.</br>
+![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/56be7fb8-568c-41f7-bfa2-2de63b0184be)</br>
+Replace Name of WiFi Network with the actual name of your WiFi Network. In our case, it is home1. Similarly, enter the password of the WiFi network corresponding to psk.</br></br>
+
+In order to exit and save the file with the same name, press CTRL+X and then Y and finally hit enter.
+
+## Reboot the Raspberry Pi
+If you are done with the above steps, you can reboot the Raspberry Pi. In the Putty Terminal, just the following command.
+```
+sudo reboot
+```
+To test the WiFi connection, we can use different commands. First, you can use the following command to get details of all the network connections.</br>
+![screen1](https://github.com/galsal1/Boiler-Temperature/assets/127937643/7dd46ccd-2d71-4d85-99f1-18ea2af26bad)</br></br>
+
+another way is to ping to google or another site
+```
+sudo ping www.google.com
+```
+
+## Troubleshooting
+If you are facing any trouble connecting to WiFi using the USB WiFi Dongle check for the following. These might be the problem (but not limited to these).</br>
+
+1) **Power:** WiFi Adapters might require more power and if your power supply cannot provide enough power to it, it might not function properly.
+2) **Compatibility:** Check for the list of compatible external WiFi adapters and buy one.
+3) **USB Adapter:** Check if the Dongle is perfectly fitted in to the USB Port.
+4) **WiFi Network:** Check if your WiFi network is up and running.
+5) **Network Interfaces and WPA Supplicant Files:** Make sure that you have entered the correct commands in the corresponding files.
+6) **Power Down and Reboot:** Power down the Raspberry Pi and reboot again.
+
+</br></br>
+<sup>the installation instructions of the Wifi dongle is taken form electronicshub site</sup>
 
 
 
