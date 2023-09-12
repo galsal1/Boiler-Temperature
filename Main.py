@@ -51,6 +51,7 @@ return true if the database isnt empty and false if database is empty
 """
 def db_isnotempty(conn):
     cursor = conn.cursor()
+    cursor.execute("""CREATE TABLE if not exsist Sensors (ID INTEGER NOT NULL PRIMARY KEY,sensor1 FLAOT,sensor2 FLAOT,sensor3 FLAOT,sensor4 FLAOT,sensor5 FLAOT,sensor6 FLAOT,sensor7 FLAOT,sensor8 FLAOT);""")
     rowcount_query = """SELECT COUNT(1) FROM Sensors WHERE ID=1;"""
     cursor.execute(rowcount_query)
     conn.commit()
