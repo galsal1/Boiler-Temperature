@@ -196,7 +196,7 @@ If you are facing any trouble connecting to WiFi using the USB WiFi Dongle check
 6) **Power Down and Reboot:** Power down the Raspberry Pi and reboot again.
 
 </br></br>
-<sup>the installation instructions of the Wifi dongle is taken form electronicshub site</sup>
+<sup>the installation instructions of the Wifi dongle is taken from electronicshub site</sup>
 
 
 
