@@ -91,13 +91,20 @@ remove index.html file from this folder</br>
 after this step the folder should look like this (only the black rectangle)</br>
 ![image](https://github.com/galsal1/Boiler-Temperature/assets/127937643/6b759432-91e7-468c-b726-0c418b2fd863)
 
-### Main.py start running on boot
-Now open the Raspberry Pi terminal and write</br>
+### Main.py and usbreset start running on boot
+Now open the Raspberry Pi terminal and write to compile usbreset file</br>
+```
+cd /home/.../Desktop/
+gcc usbreset.c -o usbreset
+```
+you can choose whenever you want to put the usbreset file it doesnt matter
+now open the rc.local file with this command</br>
 ```
 sudo nano /etc/rc.local
 ```
 add to this file this line at the end of the file
 ```
+sudo /home/.../Desktop/usbreset
 sudo python /var/www/html/Main.py
 ```
 and after that reboot Raspberry-pi
